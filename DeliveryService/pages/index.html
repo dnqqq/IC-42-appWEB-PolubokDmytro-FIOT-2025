@@ -5,20 +5,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>QuickBite</title>
 	<link rel="stylesheet" href="../styles/style.css">
+	<script src="../js/script.js"></script>
 </head>
 <body>
 	<header>
-		<div class="container">
+		<div class="header-container container">
 			<div class="header-top">
-			<span class="logo"></span>
-			<button class="log-in-btn btn"><img src="../img/profile-img.svg" alt="" class="profile-img">Увійти</button>
-			<div class="search-block">
-				<input type="text" maxlength="30" placeholder="Пошук" class="search-input">
-				<button class="search-btn btn">
-					<img src="../img/search-img.svg" alt="Пошук" class="search-img">
-				</button>
+				<span class="logo"></span>
+				<button class="log-in-btn btn"><img src="../img/profile-img.svg" alt="" class="profile-img">Увійти</button>
+				<div class="search-block">
+					<input type="text" maxlength="30" placeholder="Пошук" class="search-input">
+					<button class="search-btn btn">
+						<img src="../img/search-img.svg" alt="Пошук" class="search-img">
+					</button>
+				</div>
 			</div>
-		</div>
+			<button class="burger-menu">
+			    <span class="burger-line"></span>
+			    <span class="burger-line"></span>
+			    <span class="burger-line"></span>
+			</button>
 			<nav class="header-nav">
 				<ul class="nav-list">
 					<li class="nav-item"><a href="" class="nav-item-link">Фаст-фуд</a></li>
@@ -32,13 +38,15 @@
 
 				</ul>
 			</nav>
-			<select name="sort" id="sort" class="sort">
-				<option value="" class="sort-item">Поруч зі мною</option>
-				<option value="" class="sort-item">Рекомендовано</option>
-				<option value="" class="sort-item">Від дешевших до дорогих</option>
-				<option value="" class="sort-item">Від дорогих до дешевших</option>
-			</select>
-			<button class="filter-btn btn">Фільтр</button>
+			<div class="sort-filter-block">
+				<select name="sort" id="sort" class="sort">
+					<option value="" class="sort-item">Поруч зі мною</option>
+					<option value="" class="sort-item">Рекомендовано</option>
+					<option value="" class="sort-item">Від дешевших до дорогих</option>
+					<option value="" class="sort-item">Від дорогих до дешевших</option>
+				</select>
+				<button class="filter-btn btn">Фільтр</button>
+			</div>			
 		</div>
 	</header>
 

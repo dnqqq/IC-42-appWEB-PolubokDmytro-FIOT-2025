@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1300px;
 	position: relative;
 	padding: 0 20px;
 	margin-left: auto;
@@ -22,6 +22,7 @@ body {
 	display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 header {
@@ -31,9 +32,14 @@ header {
 	margin-bottom: 20px;
 }
 
+.header-container {
+	width: 90%;
+}
+
 	.header-top {
 		width: 100%;
 		height: 160px;
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 30px;
@@ -61,7 +67,12 @@ header {
 		    font-size: 16px;
 		    font-weight: 600;
 		    color: white;
+			transition: background-color 0.3s ease;
 		}
+
+			.log-in-btn:hover {
+			    background-color: #e67e22;
+			}
 
 			.profile-img {
 			    width: 28px;
@@ -94,7 +105,12 @@ header {
 				background-color: #ffb83d;
 				border: 0;
 				border-radius: 16px;
+				transition: background-color 0.3s ease;
 			}
+
+				.search-btn:hover {
+				    background-color: #e67e22;
+				}
 
 			.search-img {
 				width: 28px;
@@ -123,6 +139,11 @@ header {
 			.nav-item-link {
 				color: #eda528;
 				text-decoration: none;
+				transition: color 0.3s ease;
+			}
+
+			.nav-item-link:hover {
+			    color: #e67e22;
 			}
 
 	.sort {
@@ -146,7 +167,12 @@ header {
 		border-radius: 16px;
 		color: white;
 		font-size: 16px;
+		transition: background-color 0.3s ease;
 	}
+
+		.filter-btn:hover {
+		    background-color: #e67e22;
+		}
 
 main {
 	height: auto;
@@ -208,7 +234,7 @@ main {
 			}
 
 		.menu-item-img {
-		    max-width: 280px;
+		    max-width: 90%;
 		    max-height: 200px;
 		    object-fit: cover;
 		    border-radius: 10px;
@@ -268,6 +294,167 @@ footer {
 	.footer-item-link {
 		color: #eda528;
 		text-decoration: none;
+		transition: color 0.3s ease;
 	}
 
+			.footer-item-link:hover {
+			    color: #e67e22;
+			}
 
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.burger-line {
+    width: 100%;
+    height: 3px;
+    background-color: #eda528;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 1420px) {
+
+	.main-container {
+		min-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		border-radius: 0;
+	}
+}
+
+@media (max-width: 1130px) {
+	header {
+		height: 380px;
+	}
+
+	.nav-list {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.nav-item {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 1020px) {
+	header {
+		height: 420px;
+	}
+
+	.footer-list {
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	.footer-item {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 686px) {
+
+	.burger-menu {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-radius: 0 0 20px 20px;
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+    
+    .nav-item {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .nav-item-link {
+        display: block;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+    
+    .header-nav {
+        position: relative;
+    }
+
+    .header-top {
+    	height: 260px;
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: start;
+    }
+
+    .logo {
+    	margin-top: 40px;
+    	margin-bottom: 40px;
+    }
+
+    .search-block {
+    	width: 90%;
+    	
+    	margin-left: auto;
+    	margin-right: auto;
+    }
+
+    .sort-filter-block {
+    	height: 120px;
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    	justify-content: center;
+    }
+
+    .sort {
+    	width: 90%;
+    	margin: 0;
+    	margin-bottom: 20px;
+    }
+
+    .filter-btn {
+    	width: 90%;
+    	margin-left: 0;
+    	margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 360px) {
+	.menu-items-grid {
+	    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	    gap: 30px;
+	    margin-bottom: 25px;
+	}
+
+	.footer-list {
+		font-size: 16px;
+	}
+}
