@@ -26,8 +26,9 @@ body {
 
 header {
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	padding-top: 40px;
+	margin-bottom: 20px;
 }
 
 	.header-top {
@@ -147,3 +148,101 @@ header {
 		font-size: 16px;
 	}
 
+main {
+	height: auto;
+	margin-bottom: 60px;
+}
+
+.main-container {
+	width: 100%;
+	height: auto;
+	padding: 40px 60px;
+	background-color: #faefd9;
+	border-radius: 20px;
+}
+
+	.food-section {
+		margin-bottom: 20px;
+		padding: 30px;
+	}
+
+	.food-type-name {
+	    color: #eda528;
+	    font-size: 32px;
+	    margin-bottom: 30px;
+	}
+
+	.restaurant-section {
+	    margin-bottom: 40px;
+	}
+
+		.restaurant-name {
+			width: 100%;
+		    font-size: 24px;
+		    color: #333;
+		    margin-bottom: 25px;
+		    border-bottom: 2px solid #ffb83d;
+		    padding-bottom: 10px;
+		}
+
+		.menu-items-grid {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		    gap: 30px;
+		    margin-bottom: 25px;
+		}
+
+		.menu-item {
+		    background: #fff7e8;
+		    border-radius: 15px;
+		    padding: 20px;
+		    text-align: center;
+		    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		    transition: transform 0.3s ease;
+		    border: 2px solid #fff7e8;
+		}
+
+			.menu-item:hover {
+			    transform: translateY(-5px);
+			    border-color: #ffb83d;
+			}
+
+		.menu-item-img {
+		    max-width: 280px;
+		    max-height: 200px;
+		    object-fit: cover;
+		    border-radius: 10px;
+		    margin-bottom: 15px;
+		}
+
+		.menu-item-name {
+		    font-size: 18px;
+		    color: #333;
+		    margin-bottom: 10px;
+		    font-weight: 600;
+		}
+
+		.price-txt {
+		    font-size: 20px;
+		    color: #e67e22;
+		    font-weight: bold;
+		}
+
+		.show-more-btn {
+		    width: 120px;
+		    height: 40px;
+		    background-color: #ffb83d;
+		    border: 0;
+		    border-radius: 20px;
+		    color: white;
+		    font-size: 16px;
+		    font-weight: 600;
+		    margin: 0 auto;
+		    display: block;
+		    cursor: pointer;
+		    transition: background-color 0.3s ease;
+		}
+
+			.show-more-btn:hover {
+			    background-color: #e67e22;
+			}
