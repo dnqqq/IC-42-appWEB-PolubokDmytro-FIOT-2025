@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина — QuickBite</title>
+  <link rel="stylesheet" href="../styles/cart.css">
+</head>
+<body>
+  <header class="cart-header">
+    <div class="container header-container">
+      <h1 class="cart-logo">QuickBite — Корзина</h1>
+      <button class="back-btn btn">← Назад до меню</button>
+    </div>
+  </header>
+
+  <main class="cart-main container">
+    <section class="cart-content">
+      <h2 class="cart-title">Ваше замовлення</h2>
+      
+      <div class="cart-items">
+        <div class="cart-item">
+          <img src="https://brfood.com.ua/files/products/hnkfurfcnmgosg45maxa.500x500.png" alt="Біг Мак" class="cart-item-img">
+          <div class="cart-item-details">
+            <h3 class="cart-item-name">Біг Мак Меню</h3>
+            <p class="cart-item-restaurant">McDonald's</p>
+            <p class="cart-item-price">258 ₴</p>
+          </div>
+          <div class="cart-item-controls">
+            <button class="quantity-btn">-</button>
+            <span class="item-quantity">1</span>
+            <button class="quantity-btn">+</button>
+            <button class="remove-btn">Видалити</button>
+          </div>
+        </div>
+        
+        <div class="cart-item">
+          <img src="https://e-admin.com.ua/photo/photo/uploads/osama-sushi/1732216710000.jpeg" alt="Філадельфія сет" class="cart-item-img">
+          <div class="cart-item-details">
+            <h3 class="cart-item-name">Філадельфія сет</h3>
+            <p class="cart-item-restaurant">Tokyo Sushi</p>
+            <p class="cart-item-price">420 ₴</p>
+          </div>
+          <div class="cart-item-controls">
+            <button class="quantity-btn">-</button>
+            <span class="item-quantity">1</span>
+            <button class="quantity-btn">+</button>
+            <button class="remove-btn">Видалити</button>
+          </div>
+        </div>
+        
+        <div class="cart-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxi26uWKZBojC8b711bYl0TP-RSH1x6JXrIg&s" alt="Піца Маргаріта" class="cart-item-img">
+          <div class="cart-item-details">
+            <h3 class="cart-item-name">Піца Маргаріта</h3>
+            <p class="cart-item-restaurant">La Piazza</p>
+            <p class="cart-item-price">290 ₴</p>
+          </div>
+          <div class="cart-item-controls">
+            <button class="quantity-btn">-</button>
+            <span class="item-quantity">1</span>
+            <button class="quantity-btn">+</button>
+            <button class="remove-btn">Видалити</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <div class="empty-cart">
+        <div class="empty-cart-icon">🛒</div>
+        <p class="empty-cart-text">Ваша корзина порожня</p>
+        <button class="btn">Перейти до меню</button>
+      </div> -->
+      
+    </section>
+    
+    <aside class="order-summary">
+      <h2 class="summary-title">Підсумок замовлення</h2>
+      
+      <div class="summary-row">
+        <span>Товари (3)</span>
+        <span>968 ₴</span>
+      </div>
+      
+      <div class="summary-row">
+        <span>Доставка</span>
+        <span>50 ₴</span>
+      </div>
+      
+      <div class="promo-code">
+        <input type="text" class="promo-input" placeholder="Промокод">
+        <button class="apply-promo-btn btn">Застосувати</button>
+      </div>
+      
+      <div class="summary-row summary-total">
+        <span>Разом</span>
+        <span>1018 ₴</span>
+      </div>
+      
+      <button class="checkout-btn btn">Оформити замовлення</button>
+    </aside>
+  </main>
+
+  <footer class="cart-footer">
+    <p>© 2025 QuickBite. Усі права захищено.</p>
+  </footer>
+</body>
+</html>
