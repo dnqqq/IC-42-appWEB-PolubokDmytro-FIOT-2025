@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адмін панель — QuickBite</title>
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <div class="container header-container">
+      <h1 class="admin-logo">QuickBite — Панель адміністратора</h1>
+      <button class="logout-btn btn">Вийти</button>
+    </div>
+  </header>
+
+  <main class="admin-main container">
+    <aside class="sidebar">
+      <h2 class="sidebar-title">Меню</h2>
+      <ul class="sidebar-list">
+        <li><a href="#" class="sidebar-link active">Користувачі</a></li>
+        <li><a href="#" class="sidebar-link">Ресторани</a></li>
+        <li><a href="#" class="sidebar-link">Страви</a></li>
+        <li><a href="#" class="sidebar-link">Замовлення</a></li>
+        <li><a href="#" class="sidebar-link">Звіти</a></li>
+      </ul>
+    </aside>
+
+    <section class="admin-content">
+      <h2 class="content-title">Керування користувачами</h2>
+
+      <div class="action-bar">
+        <input type="text" class="search-input" placeholder="Пошук користувача...">
+        <button class="add-btn btn">+ Додати користувача</button>
+      </div>
+
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Ім’я</th>
+            <th>Email</th>
+            <th>Роль</th>
+            <th>Дії</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Олександр Іванов</td>
+            <td>ivanov@gmail.com</td>
+            <td>Адмін</td>
+            <td>
+              <button class="edit-btn">Редагувати</button>
+              <button class="delete-btn">Видалити</button>
+            </td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Марія Коваль</td>
+            <td>maria.koval@gmail.com</td>
+            <td>Користувач</td>
+            <td>
+              <button class="edit-btn">Редагувати</button>
+              <button class="delete-btn">Видалити</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>© 2025 QuickBite. Усі права захищено.</p>
+  </footer>
+</body>
+</html>
