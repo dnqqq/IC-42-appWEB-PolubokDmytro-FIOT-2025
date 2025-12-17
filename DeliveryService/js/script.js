@@ -27,3 +27,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+fetch("http://localhost:3000/api/dishes")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("dishes-list");
+    container.innerHTML = "";
+
+    if (data.length === 0) {
+      container.textContent = "Меню порожнє";
+      return;
+    }
+
+    data.forEach(dish => {
+      const item = document.createElement("div");
+      item.innerHTML = `
+        <strong>${dish.Name}</strong><br>
+        Ціна: ${dish.Price} грн<br><br>
+      `;
+      container.appendChild(item);
+    });
+  })
+  .catch(error => {
+    console.error(error);
+    document.getElementById("dishes-list").textContent =
+      "Помилка завантаження даних";
+  });
