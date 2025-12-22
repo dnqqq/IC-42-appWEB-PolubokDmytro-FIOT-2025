@@ -22,10 +22,15 @@ exports.register = async (req, res) => {
         const userId = userResult.insertId;
 
         // Assign Client role
-        await pool.query(
-            "INSERT INTO UserRoles (UserId, RoleId) VALUES (?, 1)",
-            [userId]
+        const [role] = await pool.query(
+          "SELECT Id FROM Roles WHERE Name = 'Client'"
         );
+
+        await pool.query(
+            "INSERT INTO UserRoles (UserId, RoleId) VALUES (?, ?)",
+            [userId, role[0].Id]
+        );
+
 
         // Create Client profile
         await pool.query(

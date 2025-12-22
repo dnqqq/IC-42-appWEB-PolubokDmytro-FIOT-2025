@@ -1,40 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginBtn = document.querySelector('.login-btn');
+    const form = document.getElementById('authForm');
 
-    if (loginBtn) {
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
 
-        loginBtn.addEventListener('click', async (e) => {
-            e.preventDefault();
-            
-            const emailInput = document.querySelector('input[type="text"]');
-            const passwordInput = document.querySelector('input[type="password"]');
-            
-            const email = emailInput.value;
-            const password = passwordInput.value;
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
 
-            try {
-                const res = await fetch('http://localhost:3000/api/auth/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                const data = await res.json();
+    const clearErrors = () => {
+        emailError.innerText = '';
+        passwordError.innerText = '';
+        emailInput.classList.remove('input-error');
+        passwordInput.classList.remove('input-error');
+    };
 
-                if (res.ok && data.token) {
-                    localStorage.setItem('token', data.token); 
-                    if (data.roles) {
-                        localStorage.setItem('roles', JSON.stringify(data.roles));
-                    }
-                    
-                    window.location.href = 'index.html'; 
-                } else {
-                    alert(data.message || 'Помилка входу');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        let valid = true;
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!email) {
+            emailError.innerText = 'Email обовʼязковий';
+            emailInput.classList.add('input-error');
+            valid = false;
+        } else if (!emailRegex.test(email)) {
+            emailError.innerText = 'Невірний формат email';
+            emailInput.classList.add('input-error');
+            valid = false;
+        }
+
+        if (!password) {
+            passwordError.innerText = 'Пароль обовʼязковий';
+            passwordInput.classList.add('input-error');
+            valid = false;
+        }
+
+        if (!valid) return;
+
+        try {
+            const res = await fetch('http://localhost:3000/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.token) {
+                localStorage.setItem('token', data.token);
+                if (data.roles) {
+                    localStorage.setItem('roles', JSON.stringify(data.roles));
                 }
-            } catch (err) {
-                console.error('Помилка:', err);
-                alert('Не вдалося з’єднатися із сервером');
+                // Додаємо user info для кошика
+                localStorage.setItem('user', JSON.stringify({
+                    id: data.userId,
+                    name: data.name
+                }));
+                window.location.href = 'index.html';
+            } else {
+                alert(data.message || 'Помилка входу');
             }
-        });
-    }
+
+        } catch (err) {
+            console.error(err);
+            alert('Не вдалося підключитися до сервера');
+        }
+    });
 });

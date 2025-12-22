@@ -23,3 +23,8 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+// Error handling
+app.use((err, req, res, next) => {
+  res.status(500).json({ error: "Server error" });
+});

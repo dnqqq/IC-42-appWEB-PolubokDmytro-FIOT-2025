@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>QuickBite</title>
 	<link rel="stylesheet" href="../styles/style.css">
-	<script src="../js/script.js"></script>
+	<script src="../js/index.js"></script>
 </head>
 <body>
 	<header>
 		<div class="header-container container">
 			<div class="header-top">
 				<span class="logo"></span>
-				<button class="log-in-btn btn"><img src="../img/profile-img.svg" alt="" class="profile-img">Увійти</button>
+				<button class="log-in-btn btn" id="authBtn" onclick="window.location.href='login.html'"><img src="../img/profile-img.svg" alt="" class="profile-img">Увійти</button>
 				<div class="search-block">
 					<input type="text" maxlength="30" placeholder="Пошук" class="search-input">
 					<button class="search-btn btn">
@@ -52,81 +52,17 @@
 
 	<main>
 		<div class="main-container container">
-			<section id="fastfood" class="food-section">
-				<h2 class="food-type-name">Фаст-фуд</h2>
-				<div class="restaurant-section">
-					<h3 class="restaurant-name">McDonald's</h3>
-					<div class="menu-items-grid">
-						<div class="menu-item">
-							<img src="https://brfood.com.ua/files/products/hnkfurfcnmgosg45maxa.500x500.png" alt="Біг Мак" class="menu-item-img">
-							<h4 class="menu-item-name">Біг Мак Меню</h4>
-							<p class="price-txt">258 ₴</p>
-						</div>
-
-						<div class="menu-item">
-                            <img src="https://s.06452.com.ua/section/catalogproducts/upload/images/catalog/products/000/006/499/406720_5ff73067c5c4f.png" alt="Дабл Чізбургер Меню" class="menu-item-img">
-                            <h4 class="menu-item-name">Дабл Чізбургер Меню</h4>
-                            <p class="price-txt">233 ₴</p>
-                        </div>
-
-                        <div class="menu-item">
-                            <img src="https://brfood.com.ua/files/products/hero.ffmedium.500x500.png" alt="Картопля Фрі велика" class="menu-item-img">
-                            <h4 class="menu-item-name">Картопля Фрі велика</h4>
-                            <p class="price-txt">75 ₴</p>
-                        </div>
-					</div>
-					<button class="show-more-btn btn">Ще</button>
-				</div>
+			<section class="food-section" data-category-id="1">
+			    <h2 class="food-type-name">Фаст-фуд</h2>
 			</section>
 
-			<section id="japanese" class="food-section">
-                <h2 class="food-type-name">Японська кухня</h2>
-                <div class="restaurant-section">
-                    <h3 class="restaurant-name">Tokyo Sushi</h3>
-                    <div class="menu-items-grid">
-                        <div class="menu-item">
-                            <img src="https://e-admin.com.ua/photo/photo/uploads/osama-sushi/1732216710000.jpeg" alt="Суші сет" class="menu-item-img">
-                            <h4 class="menu-item-name">Філадельфія сет</h4>
-                            <p class="price-txt">420 ₴</p>
-                        </div>
-                        <div class="menu-item">
-                            <img src="https://yapiko.com.ua/media/catalog/product/cache/90c631851bfc82ed3538a672fa9488bb/9/1/910_500_110.jpg" alt="Рамен" class="menu-item-img">
-                            <h4 class="menu-item-name">Рамен з куркою</h4>
-                            <p class="price-txt">280 ₴</p>
-                        </div>
-                        <div class="menu-item">
-                            <img src="https://avocado.te.ua/image/catalog/statti/temp_sajt.jpg" alt="Темпура" class="menu-item-img">
-                            <h4 class="menu-item-name">Креветки Темпура</h4>
-                            <p class="price-txt">320 ₴</p>
-                        </div>
-                    </div>
-                    <button class="show-more-btn btn">Ще</button>
-                </div>
-            </section>
+			<section class="food-section" data-category-id="2">
+			    <h2 class="food-type-name">Японська кухня</h2>
+			</section>
 
-            <section id="italian" class="food-section">
+            <section id="italian" class="food-section" data-category-id="3">
                 <h2 class="food-type-name">Італійська кухня</h2>
-                <div class="restaurant-section" id="dishes-list">
-                    <h3 class="restaurant-name">La Piazza</h3>
-                    <div class="menu-items-grid">
-                        <div class="menu-item">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxi26uWKZBojC8b711bYl0TP-RSH1x6JXrIg&s" alt="Піца Маргаріта" class="menu-item-img">
-                            <h4 class="menu-item-name">Піца Маргаріта</h4>
-                            <p class="price-txt">290 ₴</p>
-                        </div>
-                        <div class="menu-item">
-                            <img src="https://static.tildacdn.com/tild6164-6239-4561-a130-376437623033/_4.png" alt="Паста Карбонара" class="menu-item-img">
-                            <h4 class="menu-item-name">Паста Карбонара</h4>
-                            <p class="price-txt">240 ₴</p>
-                        </div>
-                        <div class="menu-item">
-                            <img src="https://lasunka.com/s165-prew.jpg" alt="Тірамісу" class="menu-item-img">
-                            <h4 class="menu-item-name">Тірамісу</h4>
-                            <p class="price-txt">180 ₴</p>
-                        </div>
-                    </div>
-                    <button class="show-more-btn btn">Ще</button>
-                </div>
+                
             </section>
 		</div>
 	</main>
